@@ -4,7 +4,7 @@ use graph_rag_engine::indexer::GraphRagIndexer;
 fn test_graph_rag_ingestion_and_retrieval() {
     let mut indexer = GraphRagIndexer::new();
 
-    // 1. Ingest document containing structured entities and relationships
+    // ingest a document with structured entities and relationships
     let document = "\
 Alice -- works_at -- Google (A software company based in Mountain View)
 Google -- founded_by -- LarryPage (Co-founder of Google)

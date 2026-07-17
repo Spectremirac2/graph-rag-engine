@@ -332,8 +332,8 @@ fn sbm_planted_partition_recovery_rate() {
     // block pair catches enough bridge edges, so recovery is governed by the
     // ABSOLUTE number of inter-block edges. p_out was lowered from an initial 0.05
     // (which collapsed the graph into one "monster community": rate ~0.05) down to
-    // 0.001, and blocks kept to 2..=3 of 15..=25 nodes, to reach a genuinely
-    // well-separated regime. Across five independent base seeds the measured rate
+    // 0.001, and blocks kept to 2..=3 of 15..=25 nodes, to reach a well-separated
+    // regime. Across five independent base seeds the measured rate
     // was 0.975-1.000 (mean best-match accuracy 0.988-1.000); the fixed test seed
     // below measures rate 0.975, asserted against a 0.90 threshold. The per-graph
     // accuracy bar is kept high (0.90); only the separation was tuned.
