@@ -2,6 +2,12 @@
 name = "graph-rag-engine"
 version = "0.1.0"
 edition = "2021"
+description = "A from-scratch, in-memory knowledge-graph substrate for a graph-RAG pipeline, built by hand with no graph or ML libraries."
+license = "MIT"
+repository = "https://github.com/Spectremirac2/graph-rag-engine"
+readme = "README.md"
+categories = ["data-structures"]
+keywords = ["knowledge-graph", "graph-rag", "retrieval", "graph", "rag"]
 
 [dependencies]
 serde = { version = "1.0", features = ["derive"] }
