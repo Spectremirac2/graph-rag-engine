@@ -87,6 +87,17 @@ LPA is a **heuristic** with **no global-optimum guarantee**. Concretely:
   same graph always yields the same partition, but that partition is still only a
   local heuristic result.
 
+## Design
+
+Determinism and Label Propagation are in direct conflict: LPA is randomized on purpose, because
+random async order is what stops the sweep from correlating with the structure it is looking
+for. Removing the randomness the obvious way — sweeping in sorted id order — produces a
+reproducibly *bad* partition, since sorted ids group structurally related nodes contiguously and
+the first consolidated block becomes an attractor that swallows the graph. Hashing the sweep
+order buys back the decorrelation without buying back the randomness. Why the tie-break rule is
+load-bearing rather than stylistic, and why the test constructs input families where community
+detection has a defined answer at all, are in [docs/DESIGN.md](docs/DESIGN.md).
+
 ## Verification
 
 `tests/property_tests.rs` uses a hand-rolled seeded xorshift64\* PRNG, so every
